@@ -1,0 +1,116 @@
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2f2f2;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .card h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn:hover:not(:disabled) {
+    background: #f9f9f9;
+    border-color: #bbb;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .input-group input:focus {
+    border-color: #666;
+  }
+  
+  .preview {
+    margin: 1rem 0;
+  }
+  
+  .preview video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    background: black;
+  }
+  
+  .progress {
+    margin-top: 1rem;
+  }
+  
+  progress {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+
+  .input-group {
+    margin-bottom: 1rem;
+    text-align: left; /* so placeholder/text aligns properly */
+    width: 100%;
+  }
+  
+  .input-group input {
+    width: 100%;               /* take full card width */
+    display: block;            /* block-level */
+    margin: 0 auto;            /* center it */
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;    /* include padding in width */
+  }
+  
+  .input-group input:focus {
+    border-color: #666;
+  }
+  
