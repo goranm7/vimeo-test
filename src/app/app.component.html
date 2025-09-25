@@ -11,20 +11,28 @@
       />
     </div>
 
-    <!-- File input (hidden) -->
+    <!-- File inputs (hidden) -->
     <input
-      #fileInput
+      #cameraInput
       type="file"
       accept="video/*"
       capture="environment"
       (change)="onFileSelected($event)"
       hidden
     />
+    <input
+      #fileInput
+      type="file"
+      accept="video/*"
+      (change)="onFileSelected($event)"
+      hidden
+    />
 
-    <!-- Record button -->
-    <button class="btn" (click)="fileInput.click()">
-      🎥 Record Video
-    </button>
+    <!-- Buttons -->
+    <div class="btn-group">
+      <button class="btn" (click)="cameraInput.click()">🎥 Record Video</button>
+      <button class="btn" (click)="fileInput.click()">📂 Upload Video</button>
+    </div>
 
     <!-- Preview -->
     <div *ngIf="videoPreview" class="preview">
