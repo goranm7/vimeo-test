@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
   // Replace with your Vimeo token
   vimeoApiKey: string = ''; // user-provided key
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toastr: ToastrService) {}
 
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
@@ -54,7 +55,7 @@ export class AppComponent {
         this.uploadFile(uploadLink);
       },
       error: (err) => {
-        console.error('Failed to create Vimeo video:', err);
+        this.toastr.error('Upload failed: ' + err.error.error, 'Error');
         this.uploading = false;
       }
     });
@@ -76,16 +77,16 @@ export class AppComponent {
     };
 
     xhr.onload = () => {
-      if (xhr.status === 204) {
-        alert('Upload complete!');
+      if (xhr.status === 204 || xhr.status == 200) {
+        this.toastr.success('Upload complete!', 'Success 🎉');
       } else {
-        alert('Upload failed.');
+        this.toastr.error('Upload failed.', 'Error');
       }
       this.uploading = false;
     };
 
     xhr.onerror = () => {
-      alert('Upload error.');
+      this.toastr.error('Network error while uploading.', 'Error');
       this.uploading = false;
     };
 
